@@ -1,0 +1,30 @@
+oid_section = OIDs
+
+[ req ]
+prompt                 = no
+days                   = 365
+distinguished_name     = req_distinguished_name
+req_extensions         = v3_req
+
+[ OIDs ]
+akvField = 1.2.3.45
+
+
+[ req_distinguished_name ]
+countryName            = RU
+stateOrProvinceName    = SPB
+localityName           = SPB
+organizationName       = MT
+organizationalUnitName = AKV
+commonName             = cert-with-my-dn
+emailAddress           = test@test.org
+akvField = passed
+
+
+[ v3_req ]
+basicConstraints       = CA:false
+extendedKeyUsage       = serverAuth
+subjectAltName         = @sans
+
+[ sans ]
+DNS.0 = localhost
